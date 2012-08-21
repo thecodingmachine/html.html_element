@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<displayName>HtmlElement</displayName>
+	<shortDescription>This package contains the HtmlElementInterface interface that can be used to output HTML on a page. It also features base classes implementing this interface.</shortDescription>
+	<docUrl></docUrl>
+	<logo>logo.png</logo>
+	<requires>
+		<require>src/Mouf/Html/HtmlElement/Scopable.php</require>
+		<require>src/Mouf/Html/HtmlElement/HtmlElementInterface.php</require>
+		<require>src/Mouf/Html/HtmlElement/HtmlFromFile.php</require>
+		<require>src/Mouf/Html/HtmlElement/HtmlFromFunction.php</require>
+		<require>src/Mouf/Html/HtmlElement/HtmlString.php</require>
+		<require>src/Mouf/Html/HtmlElement/HtmlBlock.php</require>
+	</requires>
+</package>
