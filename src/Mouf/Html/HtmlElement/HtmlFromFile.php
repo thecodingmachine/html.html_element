@@ -43,6 +43,19 @@ class HtmlFromFile implements HtmlElementInterface {
 	 */
 	public $relativeToRootPath;
 	
+	/**
+	 * Creates the object.
+	 * 
+	 * @param string $fileName The PHP file to be included
+	 * @param bool $relativeToRootPath If true, and if the filename is relative, the filename is relative to ROOT_PATH, otherwise, relative to current directory.
+	 * @param string $scope The scope the file will be executed in.
+	 */
+	public function __construct($fileName = null, $relativeToRootPath = true, $scope = null) {
+		$this->fileName = $fileName;
+		$this->scope = $scope;
+		$this->relativeToRootPath = $relativeToRootPath;
+	}
+	
 	public function toHtml() {
 		$isRelative = true;
 		if (strpos($this->fileName, "/") === 0 || strpos($this->fileName, ":") === 1) {
