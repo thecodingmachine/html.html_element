@@ -3,7 +3,7 @@
     "description": "This package contains the HtmlElementInterface interface that can be used to output HTML on a page. It also features base classes implementing this interface.",
     "keywords": ["html", "tohtml", "interface"],
     "homepage": "https://github.com/thecodingmachine/html.html_element",
-    "type": "library",
+    "type": "mouf-library",
     "license": "MIT",
     "authors": [
         {
