@@ -4,7 +4,6 @@
  * 
  * See the file LICENSE.txt for copying permission.
  */
-
 namespace Mouf\Html\HtmlElement;
 
 /**
@@ -47,10 +46,10 @@ class HtmlFromFile implements HtmlElementInterface {
 	 * Creates the object.
 	 * 
 	 * @param string $fileName The PHP file to be included
+	 * @param Scopable $scope The scope the file will be executed in.
 	 * @param bool $relativeToRootPath If true, and if the filename is relative, the filename is relative to ROOT_PATH, otherwise, relative to current directory.
-	 * @param string $scope The scope the file will be executed in.
 	 */
-	public function __construct($fileName = null, $relativeToRootPath = true, $scope = null) {
+	public function __construct($fileName = null, $scope = null, $relativeToRootPath = true) {
 		$this->fileName = $fileName;
 		$this->scope = $scope;
 		$this->relativeToRootPath = $relativeToRootPath;
