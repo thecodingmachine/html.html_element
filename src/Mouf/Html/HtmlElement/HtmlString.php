@@ -24,6 +24,7 @@ class HtmlString implements HtmlElementInterface {
 	public $htmlString;
 	
 	/**
+	 * @Important
 	 * @param string $htmlString The HTML string that will be embedded in the container
 	 */
 	public function __construct($htmlString = null){
