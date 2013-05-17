@@ -5,8 +5,6 @@ use Mouf\Html\HtmlElement\HtmlBlock;
 
 use Mouf\Html\HtmlElement\HtmlElementInterface;
 
-use Mouf\Utils\Actions\ActionInterface;
-
 /**
  * This action puts into an HtmlBlock one or many HtmlElement.
  * Very useful to add some content to blocks before triggering a render.

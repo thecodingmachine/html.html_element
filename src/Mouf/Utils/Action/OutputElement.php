@@ -3,8 +3,6 @@ namespace Mouf\Utils\Action;
 
 use Mouf\Html\HtmlElement\HtmlElementInterface;
 
-use Mouf\Utils\Actions\ActionInterface;
-
 /**
  * This action triggers the outputing of the HtmlElement it contains, by calling its toHtml method.
  * 
