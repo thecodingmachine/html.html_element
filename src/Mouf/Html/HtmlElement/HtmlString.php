@@ -7,6 +7,10 @@
 
 namespace Mouf\Html\HtmlElement;
 
+use Mouf\Utils\Value\ValueUtils;
+
+use Mouf\Utils\Value\ValueInterface;
+
 /**
  * An Html string that can be embedded in any container accepting HtmlElements.
  *
@@ -17,22 +21,20 @@ class HtmlString implements HtmlElementInterface {
 	/**
 	 * The HTML string that will be embedded in the container.
 	 *
-	 * @Property
-	 * @Compulsory 
-	 * @var string
+	 * @var string|ValueInterface
 	 */
 	public $htmlString;
 	
 	/**
 	 * @Important
-	 * @param string $htmlString The HTML string that will be embedded in the container
+	 * @param string|ValueInterface $htmlString The HTML string that will be embedded in the container
 	 */
 	public function __construct($htmlString = null){
 		$this->htmlString = $htmlString;
 	}
 	
 	public function toHtml() {
-		echo $this->htmlString; 
+		echo ValueUtils::val($this->htmlString); 
 		
 	}
 }
