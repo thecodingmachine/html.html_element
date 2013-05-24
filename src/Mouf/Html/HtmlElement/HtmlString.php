@@ -8,7 +8,6 @@
 namespace Mouf\Html\HtmlElement;
 
 use Mouf\Utils\Value\ValueUtils;
-
 use Mouf\Utils\Value\ValueInterface;
 
 /**
@@ -34,8 +33,7 @@ class HtmlString implements HtmlElementInterface {
 	}
 	
 	public function toHtml() {
-		echo ValueUtils::val($this->htmlString); 
-		
+		echo ValueUtils::val($this->htmlString); 		
 	}
 }
 ?>
