@@ -19,7 +19,8 @@
     },
     "autoload": {
         "psr-0": {
-            "Mouf": "src/"
+            "Mouf\\Html\\HtmlElement": "src/",
+            "Mouf\\Utils\\Action": "src/"
         }
     },
     "extra": {
