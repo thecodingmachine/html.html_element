@@ -1,9 +1,11 @@
 <?php
+
 /*
  * Copyright (c) 2012 David Negrier
- * 
+ *
  * See the file LICENSE.txt for copying permission.
  */
+
 namespace Mouf\Html\HtmlElement;
 
 /**
@@ -14,64 +16,73 @@ namespace Mouf\Html\HtmlElement;
  *
  * @Component
  */
-class HtmlFromFile implements HtmlElementInterface {
-	
-	/**
-	 * The PHP file to be executed.
-	 *
-	 * @Property
-	 * @Compulsory 
-	 * @var string
-	 */
-	public $fileName;
-	
-	/**
-	 * The scope of the file to be executed.
-	 *
-	 * @Property
-	 * @var Scopable
-	 */
-	public $scope;
-	
-	/**
-	 * If true, the filename will be relative to the ROOT PATH (if the file name is relative).
-	 * Otherwise, the file is relative to the current directory.
-	 * 
-	 * @Property
-	 * @var bool
-	 */
-	public $relativeToRootPath;
-	
-	/**
-	 * Creates the object.
-	 * 
-	 * @param string $fileName The PHP file to be included
-	 * @param Scopable $scope The scope the file will be executed in.
-	 * @param bool $relativeToRootPath If true, and if the filename is relative, the filename is relative to ROOT_PATH, otherwise, relative to current directory.
-	 */
-	public function __construct($fileName = null, $scope = null, $relativeToRootPath = true) {
-		$this->fileName = $fileName;
-		$this->scope = $scope;
-		$this->relativeToRootPath = $relativeToRootPath;
-	}
-	
-	public function toHtml() {
-		$isRelative = true;
-		if (strpos($this->fileName, "/") === 0 || strpos($this->fileName, ":") === 1) {
-			$isRelative = false;
-		}
+class HtmlFromFile implements HtmlElementInterface
+{
+    /**
+     * The PHP file to be executed.
+     *
+     * @Property
+     * @Compulsory
+     *
+     * @var string
+     */
+    public $fileName;
 
-		if ($isRelative && $this->relativeToRootPath) {
-			$fileName = ROOT_PATH.$this->fileName;
-		} else {
-			$fileName = $this->fileName;
-		}
+    /**
+     * The scope of the file to be executed.
+     *
+     * @Property
+     *
+     * @var Scopable
+     */
+    public $scope;
 
-		if ($this->scope != null) {
-			$this->scope->loadFile($fileName);
-		} else {
-			require $fileName;
-		}
-	}
+    /**
+     * If true, the filename will be relative to the ROOT PATH (if the file name is relative).
+     * Otherwise, the file is relative to the current directory.
+     *
+     * @Property
+     *
+     * @var bool
+     */
+    public $relativeToRootPath;
+
+    /**
+     * Creates the object.
+     *
+     * @param string   $fileName           The PHP file to be included
+     * @param Scopable $scope              The scope the file will be executed in.
+     * @param bool     $relativeToRootPath If true, and if the filename is relative, the filename is relative to ROOT_PATH, otherwise, relative to current directory.
+     */
+    public function __construct(string $fileName = null, Scopable $scope = null, bool $relativeToRootPath = true)
+    {
+        $this->fileName = $fileName;
+        $this->scope = $scope;
+        $this->relativeToRootPath = $relativeToRootPath;
+    }
+
+    public function toHtml()
+    {
+        $isRelative = true;
+        if (strpos($this->fileName, '/') === 0 || strpos($this->fileName, ':') === 1) {
+            $isRelative = false;
+        }
+
+        if ($isRelative && $this->relativeToRootPath) {
+            $fileName = ROOT_PATH.$this->fileName;
+        } else {
+            $fileName = $this->fileName;
+        }
+
+        if ($this->scope != null) {
+            $this->scope->loadFile($fileName);
+        } else {
+            require $fileName;
+        }
+    }
+
+    public function getHtml():string
+    {
+        // TODO: Implement getHtml() method.
+    }
 }
-?>
