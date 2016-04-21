@@ -13,14 +13,14 @@
         }
     ],
     "require": {
-    	"php": ">=5.3.0",
+    	"php": ">=7.0.0",
     	"mouf/utils.action.action-interface": "~1.0",
     	"mouf/utils.value.value-interface": "~1.0"
     },
     "autoload": {
-        "psr-0": {
-            "Mouf\\Html\\HtmlElement": "src/",
-            "Mouf\\Utils\\Action": "src/"
+        "psr-4": {
+            "Mouf\\Html\\": "src/Mouf/Html",
+            "Mouf\\Utils\\": "src/Mouf/Utils"
         }
     },
     "extra": {
