@@ -62,7 +62,7 @@ class HtmlFromFile implements HtmlElementInterface {
 		}
 
 		if ($isRelative && $this->relativeToRootPath) {
-			$fileName = ROOT_PATH.$this->fileName;
+			$fileName = __DIR__.'/../../../../../../../'.$this->fileName;
 		} else {
 			$fileName = $this->fileName;
 		}
@@ -74,4 +74,3 @@ class HtmlFromFile implements HtmlElementInterface {
 		}
 	}
 }
-?>
